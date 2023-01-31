@@ -1,0 +1,86 @@
+.btn-exit {
+    border: none;
+    padding-top: 5px;
+    font-size: 120%;
+    background-color: #343a40;
+    color: #cecece;
+}
+
+.card-header{
+    color: #ffffff;
+}
+
+.user-header {
+    background-color: #343A40FF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navigation{
+    margin-top: 13px;
+}
+
+.btn{
+    text-align: left;
+}
+
+.my-table{
+    border: 1px solid #dee2e6!important;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+tbody tr:nth-child(odd) {
+    background: #E5E5E5;
+}
+
+
+.my-caption{
+    border-bottom: 1px solid #dee2e6!important;
+    background-color: #f3f3f3;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+}
+
+.user-information{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.new-user{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+
+.new-user-button{
+    display: flex;
+    justify-content: center;
+}
+
+.bg-grey{
+    min-height: 1080px;
+    background-color: #f7f7f7;
+}
+.bg-none{
+    background-color: white;
+}
+
+.new-user-tab{
+    border: 1px solid #dee2e6!important;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+.new-user-lable{
+    border-bottom: 1px solid #dee2e6!important;
+    background-color: #f3f3f3;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+

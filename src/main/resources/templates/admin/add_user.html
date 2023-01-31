@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<h1 align="center">добавление нового пользователя</h1>
+
+<form th:method="POST" th:action="@{/admin}" th:object="${new_user}">
+    <label for="username">Login: </label>
+    <input type="text" th:field="*{username}" id="username" required>
+    <br>
+    <br>
+    <br><label for="password">Пароль: </label>
+    <input type="password" th:field="*{password}" id="password" required>
+    <br>
+    <br>
+    <br><label for="age">Возраст: </label>
+    <input type="number" th:field="*{password}" id="age" required>
+    <br>
+    <br>
+    <select name="roles[]" multiple="multiple" size="1">
+        <option th:each="role : ${roles}"
+                th:value="${role.id}"
+                th:text="${role.name}"
+        >
+        </option>
+    </select>
+        <input type="submit" value="Добавить">
+</form>
+
+</body>
+</html>
