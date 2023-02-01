@@ -16,7 +16,6 @@ import com.example.demosecurity.repositories.UserRepository;
 import java.util.List;
 
 @Service
-@Transactional
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     private final UserRepository userRepository;

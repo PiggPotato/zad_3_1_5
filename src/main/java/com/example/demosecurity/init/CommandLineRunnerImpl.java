@@ -1,6 +1,8 @@
 package com.example.demosecurity.init;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import com.example.demosecurity.model.Role;
 import com.example.demosecurity.model.User;
@@ -14,11 +16,13 @@ import java.util.Set;
 public class CommandLineRunnerImpl implements CommandLineRunner {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    // @Autowired
-    public CommandLineRunnerImpl(UserRepository userRepository, RoleRepository roleRepository) {
+    @Autowired
+    public CommandLineRunnerImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public void run(String... arg) throws Exception {
@@ -34,8 +38,8 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
 
         // пользователи Admin  и User
-        User userAdmin = new User("admin", "$2a$10$d5nr2mbGlAS.irXIgeT3.uDIcRd9lYcApqefhw8XFOfg6Uzc0Xhsu", 25, adminRoles);
-        User userUser = new User("user", "$2a$10$urBckJui4ANeLqQ4FFro3OgDr3HtOJYhGaOM1xWrZvseV3qfMXi3u", 24, userRoles);
+        User userAdmin = new User("admin", passwordEncoder.encode("admin"), 25, adminRoles);
+        User userUser = new User("user", passwordEncoder.encode("user"), 24, userRoles);
         System.out.println(userAdmin);
         userRepository.save(userAdmin);
         System.out.println(userUser);
